@@ -3,11 +3,17 @@ trait DogBark {
     public function Bark() {
         echo 'Bark ';
     }
+    public function Mammal() {
+        return true;
+    }
 }
 
 trait BirdBark {
     public function Bark() {
         echo 'Bird don\'t bark ';
+    }
+    public function Mammal() {
+        return false;
     }
 }
 
@@ -27,9 +33,11 @@ class Bird extends Animal {
 
 $o = new Dog();
 $o->Say();
-$o->Bark();	
+$o->Bark();
+echo $o->Mammal() . "<br/>";	
 
 $b = new Bird();
 $b->Say();
 $b->Bark();
+echo $b->Mammal();
 ?>
